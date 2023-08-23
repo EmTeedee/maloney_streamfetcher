@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 #-------------------------------------------------------------------------------
 # Import modules
 #
@@ -20,13 +20,19 @@ class maloney_download:
   Downloads Maloney Episodes
   '''
   verbose = False
+  episode_json = [];
 
-  def __init__(self, verbose=False):
+  def __init__(self, verbose=False, episode_json=''):
     # Change to script location
     path,file=os.path.split(os.path.realpath(__file__))
     os.chdir(path)
     self.path = path
     self.verbose = verbose
+    if os.path.isfile(episode_json):
+        with open(episode_json, mode='r') as f:
+            json_string = f.read()
+            json_string = unicodedata.normalize('NFKD', json_string).encode('utf-8','ignore')
+            self.episode_json = json.loads(json_string)
 
   def fetch_latest(self, outdir = None, uid = None):
     #old URL: srf_maloney_url = "https://www.srf.ch/sendungen/maloney/"
@@ -121,16 +127,19 @@ class maloney_download:
         self.log("  Adding ID3 Tags...")
         command = ("{} -t \"{} - {}\" \"{}\"").format(mid3v2, episode["date"], episode["title"], out_dir + "/" + episode["mp3_name"])
         self.system_command(command)
-        command = ("{} -A \"{}\" \"{}\"").format(mid3v2, "Maloney Philip", out_dir + "/" + episode["mp3_name"])
+        command = ("{} -A \"{}\" \"{}\"").format(mid3v2, "Maloney, Philip", out_dir + "/" + episode["mp3_name"])
         self.system_command(command)
-        command = ("{} -a \"{}\" \"{}\"").format(mid3v2, "Graf Roger", out_dir + "/" + episode["mp3_name"])
+        command = ("{} -a \"{}\" \"{}\"").format(mid3v2, "Graf, Roger", out_dir + "/" + episode["mp3_name"])
         self.system_command(command)
         command = ("{} -g \"{}\" \"{}\"").format(mid3v2, "Book", out_dir + "/" + episode["mp3_name"])
         self.system_command(command)
-        command = ("{} -y \"{}\" \"{}\"").format(mid3v2, episode["year"], out_dir + "/" + episode["mp3_name"])
+        command = ("{} -y \"{}\" \"{}\"").format(mid3v2, episode["date"], out_dir + "/" + episode["mp3_name"])
         self.system_command(command)
         command = ("{} -c \"{}\" \"{}\"").format(mid3v2, episode["lead"], out_dir + "/" + episode["mp3_name"])
         self.system_command(command)
+        if episode["number"]:
+            command = ("{} -T \"{}\" \"{}\"").format(mid3v2, episode["number"], out_dir + "/" + episode["mp3_name"])
+            self.system_command(command)
       cnt = cnt + 1
 
     # Deleting tmp directory
@@ -176,8 +185,8 @@ class maloney_download:
     for uid in uids:
       url = jsonurl + uid + ".json"
       page = self.curl_page(url)
-      (mp3_name, title, lead, rtmpurl, httpsurl, year, date) = self.parse_json(page)
-      json_data.append({"mp3_name": mp3_name, "title": title, "lead": lead, "rtmpurl":rtmpurl, "httpsurl":httpsurl, "year":year, "date":date})
+      (mp3_name, title, lead, rtmpurl, httpsurl, year, date, number) = self.parse_json(page)
+      json_data.append({"mp3_name": mp3_name, "title": title, "lead": lead, "rtmpurl":rtmpurl, "httpsurl":httpsurl, "year":year, "date":date, "number":number})
     return json_data
       
   def parse_json(self, json_string):
@@ -198,15 +207,22 @@ class maloney_download:
     
     year = jsonobj['chapterList'][0]['date'][:4]
     date = jsonobj['chapterList'][0]['date'][:10]
-    mp3_name = "{} - Maloney Philip - {}.mp3".format(date, title)
+    mp3_name = "Philip Maloney - xxx - {} ({}).mp3".format(title, date)
+    number = ""
+
+    episode_data = next((item for item in self.episode_json if item["title"] == title), None)
+    if episode_data:
+        date = episode_data["date"]
+        number = episode_data["episode"]
+        mp3_name = "Philip Maloney - {} - {} ({}).mp3".format(number, title, date)
     
     self.log("    MP3 Filename: {}".format(mp3_name))
     self.log("      * Title       :{} Date:{}".format(title, publishedDate, year))
     self.log("      * RTMP Url    :{}".format(rtmpurl))
     self.log("      * HTTPS Url   :{}".format(httpsurl))
-    self.log("      * Lead        :{}".format(lead))    
+    self.log("      * Lead        :{}".format(lead))
     
-    return (mp3_name, title, lead, rtmpurl, httpsurl, year, date)
+    return (mp3_name, title, lead, rtmpurl, httpsurl, year, date, number)
       
   def system_command(self, command):
     self.log(command)
@@ -226,12 +242,13 @@ if __name__ == "__main__":
   parser.add_argument('-l', '--latest', action='store_true', dest="latest", help='Download the last 10 Maloney episodes, works also for the newest ones ;-).')
   parser.add_argument('-o', '--outdir', dest='outdir', help='Specify directory to store episodes to.')
   parser.add_argument('-u', '--uid', dest='uid', help='Download a single episode by providing SRF stream UID.')
+  parser.add_argument('-j', '--json-data', dest='json', help='Use episode info from json file.')
   parser.add_argument('-v', '--verbose', action='store_true', dest='verbose', help='Enable verbose.')
   args = parser.parse_args()
 
   latest = args.latest
 
-  maloney_downloader = maloney_download(verbose=args.verbose)
+  maloney_downloader = maloney_download(verbose=args.verbose, episode_json = args.json)
 
   if latest:
     maloney_downloader.fetch_latest(outdir = args.outdir, uid=args.uid)

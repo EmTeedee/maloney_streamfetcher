@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 # Pretend to be /usr/bin/id3v2 from id3lib, sort of.
 # Copyright 2005 Joe Wreschnig
 #
