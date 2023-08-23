@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!/usr/bin/env python
 #-------------------------------------------------------------------------------
 # Import modules
 #
@@ -10,7 +10,7 @@ import unicodedata
 
 import certifi
 import json
-import urllib2
+from urllib.request import urlopen
 
 #-------------------------------------------------------------------------------
 # Class Maloney Download
@@ -34,7 +34,8 @@ class maloney_download:
     self.process_maloney_episodes(srf_maloney_url, outdir=outdir, uid=uid)
 
   def fetch_all(self, outdir = None, uid = None):
-    srf_maloney_url    = "https://www.srf.ch/sendungen/maloney/layout/set/ajax/Sendungen/maloney/sendungen/(offset)/"
+    #srf_maloney_url    = "https://www.srf.ch/sendungen/maloney/layout/set/ajax/Sendungen/maloney/sendungen/(offset)/"
+    srf_maloney_url = "https://www.srf.ch/audio/episodes/10000183/10/"
 
     for i in range(0,510,10): # each page shows 10 items per page, iterate through pages
       url = srf_maloney_url + str(i)
@@ -50,7 +51,7 @@ class maloney_download:
     rtmpdump = path_to_rtmpdump + "/rtmpdump"
         
     path_to_mid3v2   = self.path
-    mid3v2   = "python " + path_to_mid3v2 + "/mid3v2.py"
+    mid3v2   = "python3 " + path_to_mid3v2 + "/mid3v2.py"
 
     temp_directory   = "./temp"
     #old URL: json_url         = "https://il.srgssr.ch/integrationlayer/2.0/srf/mediaComposition/audio/"
@@ -111,7 +112,7 @@ class maloney_download:
           # Download via HTTPS
           self.log("  HTTPS download...")
           self.log(episode['httpsurl'])
-          mp3file = urllib2.urlopen(episode['httpsurl'])
+          mp3file = urlopen(episode['httpsurl'])
           with open(out_dir + "/" + episode["mp3_name"],'wb') as output:
             output.write(mp3file.read())
           
@@ -154,15 +155,15 @@ class maloney_download:
     return buffer.getvalue().decode("utf-8")
 
   def parse_html(self, page):
-    lines = unicodedata.normalize('NFKD', page).encode('ascii','ignore')
-    lines = str(lines).split("\n")
+    lines = unicodedata.normalize('NFKD', page).encode('utf-8','ignore')
+    lines = str(lines).split(" ")
 
     uids = []
 
     for line in lines:
       if '/popupaudioplayer' in line:
         pos = line.find("?id=") + 4
-        uids.append(line[pos:-2])
+        uids.append(line[pos:pos+36])
 
     if (len(uids) > 0):
       self.log("Found ID's")
@@ -180,13 +181,15 @@ class maloney_download:
     return json_data
       
   def parse_json(self, json_string):
-    json_string = unicodedata.normalize('NFKD', json_string).encode('ascii','ignore') # we're not interested in any non-unicode data
+    json_string = unicodedata.normalize('NFKD', json_string).encode('utf-8','ignore') # we're not interested in any non-unicode data
     jsonobj = json.loads(json_string)
     
     title = jsonobj['chapterList'][0]['title']
     lead = jsonobj['chapterList'][0]['lead']
     publishedDate = jsonobj['episode']['publishedDate']
     
+    rtmpurl = ''
+    httpsurl = ''
     for x in range(0, len(jsonobj['chapterList'][0]['resourceList'])):
         if 'RTMP' in jsonobj['chapterList'][0]['resourceList'][x]['protocol']:
           rtmpurl = jsonobj['chapterList'][0]['resourceList'][x]['url']
