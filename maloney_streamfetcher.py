@@ -97,8 +97,6 @@ class maloney_download:
         self.log("  Episode \"{} - {}\" already exists in the output folder {}".format(episode["year"], episode["title"], out_dir + "/" + episode["mp3_name"]))
         self.log("    Skipping Episode ...")
       else:
-        idx.append(cnt)
-        
         # two possibilities for raw data: 
         #    RTMP: FLV -> MP3 -> add ID3
         #    HTTPS: MP -> add ID3
@@ -106,22 +104,32 @@ class maloney_download:
         if episode['httpsurl'] == '':
           # Download with RTMP
           self.log("  RTMP download...")
-          command = rtmpdump + " -r " + episode["rtmpurl"] + "  -o \"" + temp_directory + "/stream_dump.flv\""
-          self.system_command(command)
+          self.log(episode['rtmpurl'])
+          try:
+            command = rtmpdump + " -r " + episode["rtmpurl"] + "  -o \"" + temp_directory + "/stream_dump.flv\""
+            self.system_command(command)
 
-          # Convert to MP3
-          self.log("  FFMPEG conversion flv to MP3...")
-          command = ffmpeg + " -y -loglevel panic -stats -i " + temp_directory + "/stream_dump.flv -vn -c:a copy \"" + out_dir + "/" + episode["mp3_name"] + "\""
-          self.system_command(command)
+            # Convert to MP3
+            self.log("  FFMPEG conversion flv to MP3...")
+            command = ffmpeg + " -y -loglevel panic -stats -i " + temp_directory + "/stream_dump.flv -vn -c:a copy \"" + out_dir + "/" + episode["mp3_name"] + "\""
+            self.system_command(command)
+          except Exception as err:
+            print("Could not download episode: {}".format(str(err)))
+            continue
           
         else:
           # Download via HTTPS
           self.log("  HTTPS download...")
           self.log(episode['httpsurl'])
-          mp3file = urlopen(episode['httpsurl'])
-          with open(out_dir + "/" + episode["mp3_name"],'wb') as output:
-            output.write(mp3file.read())
-          
+          try:
+            mp3file = urlopen(episode['httpsurl'])
+            with open(out_dir + "/" + episode["mp3_name"],'wb') as output:
+              output.write(mp3file.read())
+          except Exception as err:
+            print("Could not download episode: {}".format(str(err)))
+            continue
+
+        idx.append(cnt)
 
         # Add ID3 Tag
         self.log("  Adding ID3 Tags...")
@@ -140,6 +148,7 @@ class maloney_download:
         if episode["number"]:
             command = ("{} -T \"{}\" \"{}\"").format(mid3v2, episode["number"], out_dir + "/" + episode["mp3_name"])
             self.system_command(command)
+
       cnt = cnt + 1
 
     # Deleting tmp directory
@@ -216,11 +225,11 @@ class maloney_download:
         number = episode_data["episode"]
         mp3_name = "Philip Maloney - {} - {} ({}).mp3".format(number, title, date)
     
-    self.log("    MP3 Filename: {}".format(mp3_name))
-    self.log("      * Title       :{} Date:{}".format(title, publishedDate, year))
-    self.log("      * RTMP Url    :{}".format(rtmpurl))
-    self.log("      * HTTPS Url   :{}".format(httpsurl))
-    self.log("      * Lead        :{}".format(lead))
+    self.log("    MP3 Filename : {}".format(mp3_name))
+    self.log("      * Title    : {} Date:{}".format(title, publishedDate, year))
+    self.log("      * RTMP Url : {}".format(rtmpurl))
+    self.log("      * HTTPS Url: {}".format(httpsurl))
+    self.log("      * Lead     : {}".format(lead))
     
     return (mp3_name, title, lead, rtmpurl, httpsurl, year, date, number)
       
