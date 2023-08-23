@@ -2,37 +2,37 @@
 #-------------------------------------------------------------------------------
 # Import modules
 #
-import pycurl
-import os, io
+import io
+import os
 import shutil
 import argparse
 import unicodedata
-
-import certifi
 import json
 from urllib.request import urlopen
+import pycurl
+import certifi
 
 #-------------------------------------------------------------------------------
 # Class Maloney Download
 #
-class maloney_download:
+class MaloneyDownload:
   '''
   Downloads Maloney Episodes
   '''
   verbose = False
-  episode_json = [];
+  episode_data = []
 
-  def __init__(self, verbose=False, episode_json=''):
+  def __init__(self, verbose=False, episode_json_file=''):
     # Change to script location
     path,file=os.path.split(os.path.realpath(__file__))
     os.chdir(path)
     self.path = path
     self.verbose = verbose
-    if os.path.isfile(episode_json):
-        with open(episode_json, mode='r') as f:
+    if os.path.isfile(episode_json_file):
+        with open(episode_json_file, mode='r') as f:
             json_string = f.read()
             json_string = unicodedata.normalize('NFKD', json_string).encode('utf-8','ignore')
-            self.episode_json = json.loads(json_string)
+            self.episode_data = json.loads(json_string)
 
   def fetch_latest(self, outdir = None, uid = None):
     #old URL: srf_maloney_url = "https://www.srf.ch/sendungen/maloney/"
@@ -50,21 +50,15 @@ class maloney_download:
 
   def process_maloney_episodes(self, url, offset = 0, outdir=None, uid=None):
     # Constants
-    path_to_ffmpeg   = self.path
-    ffmpeg = path_to_ffmpeg + "/ffmpeg"
-    
-    path_to_rtmpdump = self.path 
-    rtmpdump = path_to_rtmpdump + "/rtmpdump"
-        
     path_to_mid3v2   = self.path
-    mid3v2   = "python3 " + path_to_mid3v2 + "/mid3v2.py"
+    mid3v2   = path_to_mid3v2 + "/mid3v2.py"
 
     temp_directory   = "./temp"
     #old URL: json_url         = "https://il.srgssr.ch/integrationlayer/2.0/srf/mediaComposition/audio/"
     json_url         = "https://il.srgssr.ch/integrationlayer/2.0/mediaComposition/byUrn/urn:srf:audio:"
 
     # Get user constants
-    if outdir == None:
+    if outdir is None:
       out_dir = "."
     elif os.path.isdir(outdir):
       out_dir = outdir
@@ -73,7 +67,7 @@ class maloney_download:
       return None
 
     # Get page content and id's
-    if uid == None:
+    if uid is None:
       id = [0,1,2,3,4,5,6,7,8,9]
       self.log("No ID given, will download all available episodes from the mainpage")
       # Get page info
@@ -93,61 +87,45 @@ class maloney_download:
     cnt = 0
     idx = []
     for episode in json_data:
-      if os.path.isfile(out_dir + "/" + episode["mp3_name"]):
-        self.log("  Episode \"{} - {}\" already exists in the output folder {}".format(episode["year"], episode["title"], out_dir + "/" + episode["mp3_name"]))
+
+      if episode["number"]:
+          mp3_name = "Philip Maloney - {} - {} ({}).mp3".format(episode["number"], episode["title"], episode["date"])
+      else:
+          mp3_name = "Philip Maloney - {} - {} ({}).mp3".format("xxx", episode["title"], episode["date"])
+      filename = out_dir + "/" + mp3_name
+
+      if os.path.isfile(filename):
+        self.log("  Episode \"{} ({})\" already exists in the output folder {}".format(episode["title"], episode["date"], filename))
         self.log("    Skipping Episode ...")
       else:
-        # two possibilities for raw data: 
-        #    RTMP: FLV -> MP3 -> add ID3
-        #    HTTPS: MP -> add ID3
-        
-        if episode['httpsurl'] == '':
-          # Download with RTMP
-          self.log("  RTMP download...")
-          self.log(episode['rtmpurl'])
-          try:
-            command = rtmpdump + " -r " + episode["rtmpurl"] + "  -o \"" + temp_directory + "/stream_dump.flv\""
-            self.system_command(command)
-
-            # Convert to MP3
-            self.log("  FFMPEG conversion flv to MP3...")
-            command = ffmpeg + " -y -loglevel panic -stats -i " + temp_directory + "/stream_dump.flv -vn -c:a copy \"" + out_dir + "/" + episode["mp3_name"] + "\""
-            self.system_command(command)
-          except Exception as err:
-            print("Could not download episode: {}".format(str(err)))
-            continue
-          
-        else:
-          # Download via HTTPS
-          self.log("  HTTPS download...")
-          self.log(episode['httpsurl'])
-          try:
-            mp3file = urlopen(episode['httpsurl'])
-            with open(out_dir + "/" + episode["mp3_name"],'wb') as output:
-              output.write(mp3file.read())
-          except Exception as err:
-            print("Could not download episode: {}".format(str(err)))
-            continue
+        # Download via HTTPS
+        self.log("  HTTPS download...")
+        self.log(episode['httpsurl'])
+        try:
+          mp3file = urlopen(episode['httpsurl'])
+          with open(filename,'wb') as output:
+            output.write(mp3file.read())
+        except Exception as err:
+          print("Could not download episode: {}".format(str(err)))
+          continue
 
         idx.append(cnt)
 
-        # Add ID3 Tag
         self.log("  Adding ID3 Tags...")
-        command = ("{} -t \"{} - {}\" \"{}\"").format(mid3v2, episode["date"], episode["title"], out_dir + "/" + episode["mp3_name"])
-        self.system_command(command)
-        command = ("{} -A \"{}\" \"{}\"").format(mid3v2, "Maloney, Philip", out_dir + "/" + episode["mp3_name"])
-        self.system_command(command)
-        command = ("{} -a \"{}\" \"{}\"").format(mid3v2, "Graf, Roger", out_dir + "/" + episode["mp3_name"])
-        self.system_command(command)
-        command = ("{} -g \"{}\" \"{}\"").format(mid3v2, "Book", out_dir + "/" + episode["mp3_name"])
-        self.system_command(command)
-        command = ("{} -y \"{}\" \"{}\"").format(mid3v2, episode["date"], out_dir + "/" + episode["mp3_name"])
-        self.system_command(command)
-        command = ("{} -c \"{}\" \"{}\"").format(mid3v2, episode["lead"], out_dir + "/" + episode["mp3_name"])
-        self.system_command(command)
+        options = []
+        options += [ '--delete-frames', '"COMM"' ]
+        options += [ '-A', '"Philip Maloney"' ]
+        options += [ '-a', '"Roger Graf"' ]
+        options += [ '-g', '"Book"' ]
+        options += [ '--TLAN', '"deu"' ]
+        options += [ '-y', '"{}"'.format(episode["date"]) ]
+        options += [ '-t', '"{} ({})"'.format(episode["title"], episode["date"]) ]
         if episode["number"]:
-            command = ("{} -T \"{}\" \"{}\"").format(mid3v2, episode["number"], out_dir + "/" + episode["mp3_name"])
-            self.system_command(command)
+          options += [ '-T', '"{}"'.format(episode["number"]) ]
+        if episode["lead"]:
+          options += [ '-c', '"{}:{}:{}"'.format("", episode["lead"], "deu") ]
+
+        self.system_command('"{}" {} "{}"'.format(mid3v2, ' '.join(options), filename))
 
       cnt = cnt + 1
 
@@ -157,7 +135,7 @@ class maloney_download:
     print("------------------------------------------------------")
     print(" Finished downloading {} Episodes from page with offset {}".format(len(idx), offset))
     for id in idx:
-      print("  * {}".format(out_dir + "/" + json_data[id]["mp3_name"]))
+      print("  * {} ({})".format(json_data[id]["title"], json_data[id]["date"]))
     print("------------------------------------------------------")
     return cnt
 
@@ -183,7 +161,7 @@ class maloney_download:
         pos = line.find("?id=") + 4
         uids.append(line[pos:pos+36])
 
-    if (len(uids) > 0):
+    if len(uids) > 0:
       self.log("Found ID's")
       for i in range(len(uids)):
         self.log("  * ID {} = {} ".format(i, uids[i]))
@@ -194,11 +172,11 @@ class maloney_download:
     for uid in uids:
       url = jsonurl + uid + ".json"
       page = self.curl_page(url)
-      (mp3_name, title, lead, rtmpurl, httpsurl, year, date, number) = self.parse_json(page)
-      json_data.append({"mp3_name": mp3_name, "title": title, "lead": lead, "rtmpurl":rtmpurl, "httpsurl":httpsurl, "year":year, "date":date, "number":number})
+      (title, lead, httpsurl, year, date, number) = self.parse_json(page, uid)
+      json_data.append({"title": title, "lead": lead, "httpsurl":httpsurl, "year":year, "date":date, "number":number})
     return json_data
       
-  def parse_json(self, json_string):
+  def parse_json(self, json_string, uid):
     json_string = unicodedata.normalize('NFKD', json_string).encode('utf-8','ignore') # we're not interested in any non-unicode data
     jsonobj = json.loads(json_string)
     
@@ -206,32 +184,28 @@ class maloney_download:
     lead = jsonobj['chapterList'][0]['lead']
     publishedDate = jsonobj['episode']['publishedDate']
     
-    rtmpurl = ''
     httpsurl = ''
     for x in range(0, len(jsonobj['chapterList'][0]['resourceList'])):
-        if 'RTMP' in jsonobj['chapterList'][0]['resourceList'][x]['protocol']:
-          rtmpurl = jsonobj['chapterList'][0]['resourceList'][x]['url']
-        if 'HTTPS' in jsonobj['chapterList'][0]['resourceList'][x]['protocol']:
-          httpsurl = jsonobj['chapterList'][0]['resourceList'][x]['url']
+      if 'HTTPS' in jsonobj['chapterList'][0]['resourceList'][x]['protocol']:
+        httpsurl = jsonobj['chapterList'][0]['resourceList'][x]['url']
     
     year = jsonobj['chapterList'][0]['date'][:4]
     date = jsonobj['chapterList'][0]['date'][:10]
-    mp3_name = "Philip Maloney - xxx - {} ({}).mp3".format(title, date)
     number = ""
 
-    episode_data = next((item for item in self.episode_json if item["title"] == title), None)
-    if episode_data:
-        date = episode_data["date"]
-        number = episode_data["episode"]
-        mp3_name = "Philip Maloney - {} - {} ({}).mp3".format(number, title, date)
+    episode_info = next((item for item in self.episode_data if item["title"] == title), None)
+    if episode_info:
+        episode_info["lead"] = lead
+        episode_info["uid"] = uid
+        date = episode_info["date"]
+        number = episode_info["episode"]
     
-    self.log("    MP3 Filename : {}".format(mp3_name))
+    self.log("   Episode Info")
     self.log("      * Title    : {} Date:{}".format(title, publishedDate, year))
-    self.log("      * RTMP Url : {}".format(rtmpurl))
     self.log("      * HTTPS Url: {}".format(httpsurl))
     self.log("      * Lead     : {}".format(lead))
     
-    return (mp3_name, title, lead, rtmpurl, httpsurl, year, date, number)
+    return (title, lead, httpsurl, year, date, number)
       
   def system_command(self, command):
     self.log(command)
@@ -252,14 +226,21 @@ if __name__ == "__main__":
   parser.add_argument('-o', '--outdir', dest='outdir', help='Specify directory to store episodes to.')
   parser.add_argument('-u', '--uid', dest='uid', help='Download a single episode by providing SRF stream UID.')
   parser.add_argument('-j', '--json-data', dest='json', help='Use episode info from json file.')
+  parser.add_argument('-w', '--write-json', action='store_true', dest="json_write", help='Store json data.')
   parser.add_argument('-v', '--verbose', action='store_true', dest='verbose', help='Enable verbose.')
   args = parser.parse_args()
 
   latest = args.latest
 
-  maloney_downloader = maloney_download(verbose=args.verbose, episode_json = args.json)
+  maloney_downloader = MaloneyDownload(verbose=args.verbose, episode_json_file = args.json)
 
   if latest:
     maloney_downloader.fetch_latest(outdir = args.outdir, uid=args.uid)
   else: # default setting
     maloney_downloader.fetch_all(outdir = args.outdir, uid=args.uid)
+
+  if args.json_write:
+    if os.path.isfile(args.json):
+        with open(args.json, mode='w') as f:
+            json = json.dumps(maloney_downloader.episode_data)
+            f.write(json)

@@ -1,25 +1,24 @@
-[Maloney Streamfetcher](https://github.com/dirtbit/maloney_streamfetcher)
-================================
+Maloney Streamfetcher
+=====================
 
 This script is a fork of tschinz' maloney fetcher: https://github.com/tschinz/maloney_streamfetcher. All credits to him!
 
-Just made the script work again and compatible for Python 2.7.
+dirtbit added Python 2.7 support, some other improvements and updated for a new SRF homepage: https://github.com/dirtbit/maloney_streamfetcher
 
-This Python script lets you download the latest Philip Maloney Episodes from the [SRF Website](http://www.srf.ch/sendungen/maloney).
+Update to Python 3, fixes for new SRF homepage, persistent metadata and tool to rename files from other sources by EmTeedee.
+
+This Python script lets you download the latest Philip Maloney Episodes from the [SRF Website](https://www.srf.ch/audio/maloney).
 
 
 Requirements
 ---
-* ``Python 2.7``
+* ``Python 3``
   * ``pycurl``
-  * ``certifi``
-* ``rtmpdump`` - For downloading the rtmp stream
-* ``ffmpeg`` - For mp3 conversion
-* ``mid3v2.py`` - For create the id3 tags
+  * ``mutagen``
 
 On a Debian based Linux:
 ```bash
-sudo apt-get install python pycurl rtmpdump ffmpeg certifi
+sudo apt-get install python3 python3-pycurl python3-mutagen
 ```
 
 Features
@@ -29,13 +28,12 @@ Features
 * Lets you download an episode with a known UID as MP3
 * Creates ID3 tags for the episode
 * Checks for duplicated episodes
-* Checks for folders
 
 Usage
 ---
 
 ```bash
-python maloney_streamfetcher.py -h
+./maloney_streamfetcher.py -h
 
 Usage: maloney_streamfetcher.py [options]
 
@@ -48,12 +46,15 @@ Options:
   -o OUTDIR, --outdir=OUTDIR
                         Specify directory to store episodes to.
   -u UID, --uid=UID     Download a single episode by providing SRF stream UID.
+  -j JSON, --json-data JSON
+                        Use episode info from json file.
+  -w, --write-json      Store json data.
   -v, --verbose         Enable verbose.
 ```
 
 * Execute script
 ```bash
-python maloney_streamfetcher.py -l -o /location/to/musicfiles
+./maloney_streamfetcher.py -l -o /location/to/musicfiles
 ```
 
 * Use Cronjob for automatically execute the script every Monday at 24:00.
@@ -61,14 +62,21 @@ python maloney_streamfetcher.py -l -o /location/to/musicfiles
 crontab -e
 ```
 ```bash
-0 * * * 1 python /location/to/maloney_streamfetcher.py -l -o /location/to/musicfiles
+0 * * * 1 /location/to/maloney_streamfetcher.py -l -o /location/to/musicfiles
 ```
 
 ![Maloney Philip](http://www.srfcdn.ch/radio/modules/dynimages/624/drs-3/maloney/2012/142280.maloney1.jpg)
 
 
-Versions Log
+Version Log
 ---
+- `v1.3, Python 3`
+  * REMOVE: RTMP support
+  * CHG: persistent metadata
+  * CHG: SRD homepage update
+  * CHG: filename format
+  * ADD: rename utility
+
 - `v1.2, only for Python 2.7`
   * ADD: if possible try to avoid RTMP, download mp3 via HTTPS instead
   * CHG: updated broken ID3 data source --> fixed URL, using JSON now
@@ -91,4 +99,4 @@ Licensing
 ---
 This document is under the [CC BY-NC-ND 3-0 License, Attribution-NonCommercial-NoDerivs 3.0 Unported](http://creativecommons.org/licenses/by-nc-nd/3.0/). Use this script at your own risc!
 
-The Philip Maloney streams are copyright by [Roger Graf](www.rogergraf.ch). The streams are provided by [SRF](www.srf.ch/sendungen/maloney). It is against the law to distribute the generated mp3 files!
+The Philip Maloney streams are copyright by [Roger Graf](www.rogergraf.ch). The streams are provided by [SRF](www.srf.ch/audio/maloney). It is against the law to distribute the generated mp3 files!
