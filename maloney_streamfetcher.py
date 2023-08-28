@@ -194,6 +194,8 @@ class MaloneyDownload:
     number = ""
 
     episode_info = next((item for item in self.episode_data if item["title"] == title), None)
+    if episode_info is None:
+        episode_info = next((item for item in self.episode_data if "alternative_titles" in item and title in item["alternative_titles"]), None)
     if episode_info:
         episode_info["lead"] = lead
         episode_info["uid"] = uid

@@ -172,7 +172,10 @@
   {
     "episode": "035",
     "date": "1990-12-16",
-    "title": "Der Swimmingpool"
+    "title": "Der Swimming-Pool",
+    "alternative_titles": [
+        "Der Swimmingpool"
+    ]
   },
   {
     "episode": "036",
@@ -1022,7 +1025,10 @@
   {
     "episode": "205",
     "date": "1998-11-29",
-    "title": "Weidmannsheil"
+    "title": "Weidmannsheil",
+    "alternative_titles": [
+        "Waidmannsheil"
+    ]
   },
   {
     "episode": "206",
@@ -1262,7 +1268,10 @@
   {
     "episode": "253",
     "date": "2003-04-06",
-    "title": "Ein Schluck zuviel"
+    "title": "Ein Schluck zuviel",
+    "alternative_titles": [
+        "Ein Schluck zu viel"
+    ]
   },
   {
     "episode": "254",
@@ -1322,7 +1331,10 @@
   {
     "episode": "265",
     "date": "2004-04-04",
-    "title": "Stilleben mit Leiche"
+    "title": "Stilleben mit Leiche",
+    "alternative_titles": [
+        "Stillleben mit Leiche"
+    ]
   },
   {
     "episode": "266",
@@ -1722,7 +1734,10 @@
   {
     "episode": "345",
     "date": "2011-12-04",
-    "title": "Burnout"
+    "title": "Burn-Out",
+    "alternative_titles": [
+        "Burnout"
+    ]
   },
   {
     "episode": "346",
@@ -1862,7 +1877,11 @@
   {
     "episode": "373",
     "date": "2015-08-30",
-    "title": "Tödliches Start-Up"
+    "title": "Tödliches Start-Up",
+    "alternative_titles": [
+        "Tödliches Start-up",
+        "Tödliches Startup"
+    ]
   },
   {
     "episode": "374",

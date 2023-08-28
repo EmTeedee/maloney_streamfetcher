@@ -61,6 +61,8 @@ class MaloneyRenamer:
         if episode_info is None:
             episode_info = next((item for item in self.episode_data if item["title"] == stem), None)
         if episode_info is None:
+            episode_info = next((item for item in self.episode_data if "alternative_titles" in item and stem in item["alternative_titles"]), None)
+        if episode_info is None:
             try:
                 id3 = mutagen.id3.ID3(filename, translate=False)
             except Exception as err:
