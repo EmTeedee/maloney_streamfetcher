@@ -1,0 +1,2022 @@
+[
+  {
+    "episode": "001",
+    "date": "1989-01-08",
+    "title": "Die kleine Schwester"
+  },
+  {
+    "episode": "002",
+    "date": "1989-01-29",
+    "title": "Der grosse Schlaf"
+  },
+  {
+    "episode": "003",
+    "date": "1989-03-12",
+    "title": "Das hohe Fenster"
+  },
+  {
+    "episode": "004",
+    "date": "1989-03-26",
+    "title": "Der lange Abschied"
+  },
+  {
+    "episode": "005",
+    "date": "1989-04-16",
+    "title": "Playback"
+  },
+  {
+    "episode": "006",
+    "date": "1989-05-01",
+    "title": "Die Dame im See"
+  },
+  {
+    "episode": "007",
+    "date": "1989-05-07",
+    "title": "Lebwohl, mein Liebling"
+  },
+  {
+    "episode": "008",
+    "date": "1989-05-28",
+    "title": "Die letzte Fahrt"
+  },
+  {
+    "episode": "009",
+    "date": "1989-06-25",
+    "title": "Die schwarze Katze"
+  },
+  {
+    "episode": "010",
+    "date": "1989-07-30",
+    "title": "Der verlorene Sohn"
+  },
+  {
+    "episode": "011",
+    "date": "1989-08-06",
+    "title": "Wien bei Nacht"
+  },
+  {
+    "episode": "012",
+    "date": "1989-09-17",
+    "title": "Die alten Griechen"
+  },
+  {
+    "episode": "013",
+    "date": "1989-11-19",
+    "title": "Der zweite Mann"
+  },
+  {
+    "episode": "014",
+    "date": "1989-12-03",
+    "title": "Das achte Loch"
+  },
+  {
+    "episode": "015",
+    "date": "1989-12-25",
+    "title": "Der neue Einstein"
+  },
+  {
+    "episode": "016",
+    "date": "1989-12-31",
+    "title": "Hopfen und Malz"
+  },
+  {
+    "episode": "017",
+    "date": "1990-02-04",
+    "title": "Schwarz auf Weiss"
+  },
+  {
+    "episode": "018",
+    "date": "1990-02-11",
+    "title": "Jackpot"
+  },
+  {
+    "episode": "019",
+    "date": "1990-03-04",
+    "title": "Full-House"
+  },
+  {
+    "episode": "020",
+    "date": "1990-03-18",
+    "title": "Der Blockwart"
+  },
+  {
+    "episode": "021",
+    "date": "1990-04-08",
+    "title": "Ein todsicheres Geschäft"
+  },
+  {
+    "episode": "022",
+    "date": "1990-04-29",
+    "title": "Das Versprechen"
+  },
+  {
+    "episode": "023",
+    "date": "1990-05-20",
+    "title": "Hasta Luego"
+  },
+  {
+    "episode": "024",
+    "date": "1990-05-27",
+    "title": "Die Verfolgte"
+  },
+  {
+    "episode": "025",
+    "date": "1990-06-17",
+    "title": "Die Fahrt ins Blaue"
+  },
+  {
+    "episode": "026",
+    "date": "1990-06-24",
+    "title": "Der Morgen danach"
+  },
+  {
+    "episode": "027",
+    "date": "1990-07-08",
+    "title": "Der Aussteiger"
+  },
+  {
+    "episode": "028",
+    "date": "1990-08-12",
+    "title": "Der grosse Bruder"
+  },
+  {
+    "episode": "029",
+    "date": "1990-08-19",
+    "title": "Der Lift"
+  },
+  {
+    "episode": "030",
+    "date": "1990-08-22",
+    "title": "Tod in Hollywood"
+  },
+  {
+    "episode": "031",
+    "date": "1990-09-09",
+    "title": "Das Ohr des Meisters"
+  },
+  {
+    "episode": "032",
+    "date": "1990-10-14",
+    "title": "Die Brieftaube"
+  },
+  {
+    "episode": "033",
+    "date": "1990-11-04",
+    "title": "Die andere Frau"
+  },
+  {
+    "episode": "034",
+    "date": "1990-11-25",
+    "title": "Der schwarze Koffer"
+  },
+  {
+    "episode": "035",
+    "date": "1990-12-16",
+    "title": "Der Swimmingpool"
+  },
+  {
+    "episode": "036",
+    "date": "1991-01-06",
+    "title": "Die Blumen des Bösen"
+  },
+  {
+    "episode": "037",
+    "date": "1991-01-12",
+    "title": "Der Zwillingsbruder"
+  },
+  {
+    "episode": "038",
+    "date": "1991-01-19",
+    "title": "Die Rechnung aus dem Jenseits"
+  },
+  {
+    "episode": "039",
+    "date": "1991-01-27",
+    "title": "Der Spaziergänger"
+  },
+  {
+    "episode": "040",
+    "date": "1991-02-17",
+    "title": "Der Knall"
+  },
+  {
+    "episode": "041",
+    "date": "1991-02-24",
+    "title": "Seltsame Vögel"
+  },
+  {
+    "episode": "042",
+    "date": "1991-03-17",
+    "title": "Mord nach Noten"
+  },
+  {
+    "episode": "043",
+    "date": "1991-04-21",
+    "title": "Das Muttermal"
+  },
+  {
+    "episode": "044",
+    "date": "1991-04-28",
+    "title": "Der Entführte"
+  },
+  {
+    "episode": "045",
+    "date": "1991-05-12",
+    "title": "Der Tote im Park"
+  },
+  {
+    "episode": "046",
+    "date": "1991-06-02",
+    "title": "Hawaii einfach"
+  },
+  {
+    "episode": "047",
+    "date": "1991-06-09",
+    "title": "Endstation Sehnsucht"
+  },
+  {
+    "episode": "048",
+    "date": "1991-06-16",
+    "title": "Schnee von Gestern"
+  },
+  {
+    "episode": "049",
+    "date": "1991-06-30",
+    "title": "Ein seltsames Paar"
+  },
+  {
+    "episode": "050",
+    "date": "1991-07-14",
+    "title": "Seemannsgarn"
+  },
+  {
+    "episode": "051",
+    "date": "1991-08-11",
+    "title": "Das Sommerloch"
+  },
+  {
+    "episode": "052",
+    "date": "1991-08-25",
+    "title": "Die Terrasse"
+  },
+  {
+    "episode": "053",
+    "date": "1991-09-22",
+    "title": "Die Klinik"
+  },
+  {
+    "episode": "054",
+    "date": "1991-10-27",
+    "title": "Das Auto"
+  },
+  {
+    "episode": "055",
+    "date": "1991-11-03",
+    "title": "Abgereist ohne Adressangabe"
+  },
+  {
+    "episode": "056",
+    "date": "1991-11-10",
+    "title": "Löcher im Käse"
+  },
+  {
+    "episode": "057",
+    "date": "1991-11-17",
+    "title": "Die Chaotin"
+  },
+  {
+    "episode": "058",
+    "date": "1991-11-24",
+    "title": "Hundeleben"
+  },
+  {
+    "episode": "059",
+    "date": "1991-12-15",
+    "title": "Der Killerinstinkt"
+  },
+  {
+    "episode": "060",
+    "date": "1991-12-29",
+    "title": "Zaubertricks"
+  },
+  {
+    "episode": "061",
+    "date": "1992-02-02",
+    "title": "Der Ring"
+  },
+  {
+    "episode": "062",
+    "date": "1992-02-09",
+    "title": "Mord im 3/4 Takt"
+  },
+  {
+    "episode": "063",
+    "date": "1992-02-16",
+    "title": "Schwedische Gardinen"
+  },
+  {
+    "episode": "064",
+    "date": "1992-03-01",
+    "title": "Der gerissene Film"
+  },
+  {
+    "episode": "065",
+    "date": "1992-03-08",
+    "title": "Die Laube"
+  },
+  {
+    "episode": "066",
+    "date": "1992-03-29",
+    "title": "Der Ernstfall"
+  },
+  {
+    "episode": "067",
+    "date": "1992-04-10",
+    "title": "Die nassen Hosen"
+  },
+  {
+    "episode": "068",
+    "date": "1992-04-19",
+    "title": "Der nackte Krieger"
+  },
+  {
+    "episode": "069",
+    "date": "1992-05-03",
+    "title": "Das schwache Herz"
+  },
+  {
+    "episode": "070",
+    "date": "1992-05-17",
+    "title": "Die Erstausgabe"
+  },
+  {
+    "episode": "071",
+    "date": "1992-05-24",
+    "title": "Der Bruch"
+  },
+  {
+    "episode": "072",
+    "date": "1992-06-07",
+    "title": "Die Liste"
+  },
+  {
+    "episode": "073",
+    "date": "1992-06-14",
+    "title": "Klopfzeichen"
+  },
+  {
+    "episode": "074",
+    "date": "1992-07-12",
+    "title": "Heisse Tage"
+  },
+  {
+    "episode": "075",
+    "date": "1992-08-02",
+    "title": "Die unsichtbare Leiche"
+  },
+  {
+    "episode": "076",
+    "date": "1992-08-09",
+    "title": "Der Anfänger"
+  },
+  {
+    "episode": "077",
+    "date": "1992-08-16",
+    "title": "Das Anwaltsgeheimnis"
+  },
+  {
+    "episode": "078",
+    "date": "1992-09-06",
+    "title": "Die Weltmeister"
+  },
+  {
+    "episode": "079",
+    "date": "1992-09-28",
+    "title": "Ein Mord mit Talent"
+  },
+  {
+    "episode": "080",
+    "date": "1992-10-04",
+    "title": "Der schöne Thomas"
+  },
+  {
+    "episode": "081",
+    "date": "1992-10-18",
+    "title": "Der Spieler"
+  },
+  {
+    "episode": "082",
+    "date": "1992-11-01",
+    "title": "Bilder lügen nicht"
+  },
+  {
+    "episode": "083",
+    "date": "1992-11-15",
+    "title": "Süsse Geheimnisse"
+  },
+  {
+    "episode": "084",
+    "date": "1992-12-06",
+    "title": "Der Stein der Weisen"
+  },
+  {
+    "episode": "085",
+    "date": "1992-12-13",
+    "title": "Die Armbanduhr"
+  },
+  {
+    "episode": "086",
+    "date": "1992-12-27",
+    "title": "Der Mörderhai"
+  },
+  {
+    "episode": "087",
+    "date": "1993-01-17",
+    "title": "Druckbuchstaben"
+  },
+  {
+    "episode": "088",
+    "date": "1993-01-24",
+    "title": "Der Wettkampf"
+  },
+  {
+    "episode": "089",
+    "date": "1993-02-07",
+    "title": "Das trojanische Pferd"
+  },
+  {
+    "episode": "090",
+    "date": "1993-02-14",
+    "title": "Familienbande"
+  },
+  {
+    "episode": "091",
+    "date": "1993-03-07",
+    "title": "Der Feuerteufel"
+  },
+  {
+    "episode": "092",
+    "date": "1993-03-21",
+    "title": "Der Vermisste"
+  },
+  {
+    "episode": "093",
+    "date": "1993-04-04",
+    "title": "Der Heiratsschwindler"
+  },
+  {
+    "episode": "094",
+    "date": "1993-04-18",
+    "title": "Die Pille"
+  },
+  {
+    "episode": "095",
+    "date": "1993-05-02",
+    "title": "Der Goldfisch"
+  },
+  {
+    "episode": "096",
+    "date": "1993-05-16",
+    "title": "Fälschungen"
+  },
+  {
+    "episode": "097",
+    "date": "1993-06-06",
+    "title": "Der liebe Onkel"
+  },
+  {
+    "episode": "098",
+    "date": "1993-07-11",
+    "title": "Die Handtasche"
+  },
+  {
+    "episode": "099",
+    "date": "1993-08-15",
+    "title": "Durch dick und dünn"
+  },
+  {
+    "episode": "100",
+    "date": "1993-09-12",
+    "title": "Die Lösung"
+  },
+  {
+    "episode": "101",
+    "date": "1993-10-10",
+    "title": "Tödliche Ausstellung"
+  },
+  {
+    "episode": "102",
+    "date": "1993-10-17",
+    "title": "Auf der Flucht"
+  },
+  {
+    "episode": "103",
+    "date": "1993-11-07",
+    "title": "Dunkle Geschäfte"
+  },
+  {
+    "episode": "104",
+    "date": "1993-11-14",
+    "title": "Schadenfreude"
+  },
+  {
+    "episode": "105",
+    "date": "1993-12-05",
+    "title": "Suchtgefahr"
+  },
+  {
+    "episode": "106",
+    "date": "1994-01-09",
+    "title": "Der Händler"
+  },
+  {
+    "episode": "107",
+    "date": "1994-02-06",
+    "title": "Die blaue Tasche"
+  },
+  {
+    "episode": "108",
+    "date": "1994-02-13",
+    "title": "Aus heiterem Himmel"
+  },
+  {
+    "episode": "109",
+    "date": "1994-04-03",
+    "title": "Der Postraub"
+  },
+  {
+    "episode": "110",
+    "date": "1994-04-10",
+    "title": "Die Spätvorstellung"
+  },
+  {
+    "episode": "111",
+    "date": "1994-04-17",
+    "title": "Garten des Todes"
+  },
+  {
+    "episode": "112",
+    "date": "1994-05-06",
+    "title": "Tod eines Baulöwen"
+  },
+  {
+    "episode": "113",
+    "date": "1994-05-22",
+    "title": "Das Geschäftsessen"
+  },
+  {
+    "episode": "114",
+    "date": "1994-06-12",
+    "title": "Zur Hölle mit Don Giovanni"
+  },
+  {
+    "episode": "115",
+    "date": "1994-06-26",
+    "title": "Hundstage"
+  },
+  {
+    "episode": "116",
+    "date": "1994-07-10",
+    "title": "Kunstfehler"
+  },
+  {
+    "episode": "117",
+    "date": "1994-07-17",
+    "title": "Galerie der Toten"
+  },
+  {
+    "episode": "118",
+    "date": "1994-08-07",
+    "title": "Das Sommerrätsel"
+  },
+  {
+    "episode": "119",
+    "date": "1994-08-14",
+    "title": "Das Hausfest"
+  },
+  {
+    "episode": "120",
+    "date": "1994-10-13",
+    "title": "Der Untermieter"
+  },
+  {
+    "episode": "121",
+    "date": "1994-10-16",
+    "title": "Der Doppelgänger"
+  },
+  {
+    "episode": "122",
+    "date": "1994-10-23",
+    "title": "Das Ende aller Sorgen"
+  },
+  {
+    "episode": "123",
+    "date": "1994-11-20",
+    "title": "Blind Date"
+  },
+  {
+    "episode": "124",
+    "date": "1994-12-11",
+    "title": "Die Nacht der langen Messer"
+  },
+  {
+    "episode": "125",
+    "date": "1994-12-18",
+    "title": "Das Appartement"
+  },
+  {
+    "episode": "126",
+    "date": "1995-02-12",
+    "title": "Die Hand"
+  },
+  {
+    "episode": "127",
+    "date": "1995-02-19",
+    "title": "Der grosse Knall"
+  },
+  {
+    "episode": "128",
+    "date": "1995-02-26",
+    "title": "Der Angler"
+  },
+  {
+    "episode": "129",
+    "date": "1995-02-26",
+    "title": "Das Portrait"
+  },
+  {
+    "episode": "130",
+    "date": "1995-04-09",
+    "title": "Lange Nächte"
+  },
+  {
+    "episode": "131",
+    "date": "1995-04-16",
+    "title": "Mord nach Plan"
+  },
+  {
+    "episode": "132",
+    "date": "1995-05-14",
+    "title": "Der Weg nach oben"
+  },
+  {
+    "episode": "133",
+    "date": "1995-05-21",
+    "title": "Seltsame Zeugen"
+  },
+  {
+    "episode": "134",
+    "date": "1995-06-11",
+    "title": "Der blaue Dunst"
+  },
+  {
+    "episode": "135",
+    "date": "1995-06-18",
+    "title": "Die bösen Schwestern"
+  },
+  {
+    "episode": "136",
+    "date": "1995-07-16",
+    "title": "Der Womper"
+  },
+  {
+    "episode": "137",
+    "date": "1995-07-23",
+    "title": "Schüsse im Äther"
+  },
+  {
+    "episode": "138",
+    "date": "1995-08-20",
+    "title": "Der direkte Draht"
+  },
+  {
+    "episode": "139",
+    "date": "1995-09-17",
+    "title": "Das andere Leben"
+  },
+  {
+    "episode": "140",
+    "date": "1995-10-15",
+    "title": "Der Ball ist rund"
+  },
+  {
+    "episode": "141",
+    "date": "1995-10-22",
+    "title": "Rollenspiele"
+  },
+  {
+    "episode": "142",
+    "date": "1995-11-19",
+    "title": "Das Rattennest"
+  },
+  {
+    "episode": "143",
+    "date": "1995-11-26",
+    "title": "Das Erbe"
+  },
+  {
+    "episode": "144",
+    "date": "1995-12-17",
+    "title": "Durch die Blume"
+  },
+  {
+    "episode": "145",
+    "date": "1995-12-24",
+    "title": "Schöne Bescherung"
+  },
+  {
+    "episode": "146",
+    "date": "1996-01-28",
+    "title": "Das stille Örtchen"
+  },
+  {
+    "episode": "147",
+    "date": "1996-02-04",
+    "title": "Das Jubiläum"
+  },
+  {
+    "episode": "148",
+    "date": "1996-02-18",
+    "title": "Die Dämonen"
+  },
+  {
+    "episode": "149",
+    "date": "1996-02-25",
+    "title": "Der Banküberfall"
+  },
+  {
+    "episode": "150",
+    "date": "1996-03-24",
+    "title": "Mord im Parkhaus"
+  },
+  {
+    "episode": "151",
+    "date": "1996-03-31",
+    "title": "Der schöne Fuss"
+  },
+  {
+    "episode": "152",
+    "date": "1996-04-21",
+    "title": "Die Bombenbastler"
+  },
+  {
+    "episode": "153",
+    "date": "1996-04-28",
+    "title": "Ein tierischer Verdacht"
+  },
+  {
+    "episode": "154",
+    "date": "1996-05-19",
+    "title": "Ein friedlicher Park"
+  },
+  {
+    "episode": "155",
+    "date": "1996-05-26",
+    "title": "Das Künstlerheim"
+  },
+  {
+    "episode": "156",
+    "date": "1996-06-16",
+    "title": "Der Grabstein"
+  },
+  {
+    "episode": "157",
+    "date": "1996-06-23",
+    "title": "Das Seminar"
+  },
+  {
+    "episode": "158",
+    "date": "1996-09-01",
+    "title": "Der Test"
+  },
+  {
+    "episode": "159",
+    "date": "1996-09-08",
+    "title": "Die Ferienbekanntschaft"
+  },
+  {
+    "episode": "160",
+    "date": "1996-10-06",
+    "title": "Die fremde Wohnung"
+  },
+  {
+    "episode": "161",
+    "date": "1996-10-13",
+    "title": "Das Comeback"
+  },
+  {
+    "episode": "162",
+    "date": "1996-11-10",
+    "title": "23 Rosen"
+  },
+  {
+    "episode": "163",
+    "date": "1996-11-17",
+    "title": "Der Mann im Hotel"
+  },
+  {
+    "episode": "164",
+    "date": "1996-12-15",
+    "title": "Der Tramkiller"
+  },
+  {
+    "episode": "165",
+    "date": "1996-12-22",
+    "title": "Der falsche Hund"
+  },
+  {
+    "episode": "166",
+    "date": "1997-01-19",
+    "title": "Der Elsterverein"
+  },
+  {
+    "episode": "167",
+    "date": "1997-01-26",
+    "title": "Die Saisonkarte"
+  },
+  {
+    "episode": "168",
+    "date": "1997-02-09",
+    "title": "Der Fasnachtsmörder"
+  },
+  {
+    "episode": "169",
+    "date": "1997-02-16",
+    "title": "Die Mondfinsternis"
+  },
+  {
+    "episode": "170",
+    "date": "1997-03-16",
+    "title": "Das doppelte Leben"
+  },
+  {
+    "episode": "171",
+    "date": "1997-03-23",
+    "title": "Die Alters-WG"
+  },
+  {
+    "episode": "172",
+    "date": "1997-04-13",
+    "title": "Die Agenda"
+  },
+  {
+    "episode": "173",
+    "date": "1997-04-20",
+    "title": "Die Dichterlesung"
+  },
+  {
+    "episode": "174",
+    "date": "1997-05-11",
+    "title": "Die Bedrohung"
+  },
+  {
+    "episode": "175",
+    "date": "1997-05-18",
+    "title": "Mord im Theater"
+  },
+  {
+    "episode": "176",
+    "date": "1997-06-15",
+    "title": "Tod eines Architekten"
+  },
+  {
+    "episode": "177",
+    "date": "1997-06-22",
+    "title": "Der Bootsausflug"
+  },
+  {
+    "episode": "178",
+    "date": "1997-07-13",
+    "title": "Der Schatten"
+  },
+  {
+    "episode": "179",
+    "date": "1997-07-20",
+    "title": "Die Beute"
+  },
+  {
+    "episode": "180",
+    "date": "1997-10-19",
+    "title": "Der Geizhals"
+  },
+  {
+    "episode": "181",
+    "date": "1997-10-26",
+    "title": "Das Nebeneinkommen"
+  },
+  {
+    "episode": "182",
+    "date": "1997-11-23",
+    "title": "Der Fremde"
+  },
+  {
+    "episode": "183",
+    "date": "1997-11-30",
+    "title": "Zum Kuckuck"
+  },
+  {
+    "episode": "184",
+    "date": "1997-12-21",
+    "title": "Die Farbtherapie"
+  },
+  {
+    "episode": "185",
+    "date": "1997-12-28",
+    "title": "Eiszeit"
+  },
+  {
+    "episode": "186",
+    "date": "1998-01-25",
+    "title": "Der Höhlenmensch"
+  },
+  {
+    "episode": "187",
+    "date": "1998-02-01",
+    "title": "Tod im Schnee"
+  },
+  {
+    "episode": "188",
+    "date": "1998-02-22",
+    "title": "Tödliches Frühstück"
+  },
+  {
+    "episode": "189",
+    "date": "1998-03-01",
+    "title": "Das zweite Ich"
+  },
+  {
+    "episode": "190",
+    "date": "1998-03-22",
+    "title": "Der Bodybuilder"
+  },
+  {
+    "episode": "191",
+    "date": "1998-03-29",
+    "title": "Blitz und Donner"
+  },
+  {
+    "episode": "192",
+    "date": "1998-04-19",
+    "title": "Die Einbrecherin"
+  },
+  {
+    "episode": "193",
+    "date": "1998-04-26",
+    "title": "Geisterstunde"
+  },
+  {
+    "episode": "194",
+    "date": "1998-05-24",
+    "title": "Fanpost"
+  },
+  {
+    "episode": "195",
+    "date": "1998-05-31",
+    "title": "Trickdiebe"
+  },
+  {
+    "episode": "196",
+    "date": "1998-06-21",
+    "title": "Die Abseitsfalle"
+  },
+  {
+    "episode": "197",
+    "date": "1998-06-28",
+    "title": "Das Rennpferd"
+  },
+  {
+    "episode": "198",
+    "date": "1998-07-26",
+    "title": "Hirngespinste"
+  },
+  {
+    "episode": "199",
+    "date": "1998-08-02",
+    "title": "Das Investment"
+  },
+  {
+    "episode": "200",
+    "date": "1998-08-30",
+    "title": "Der Jungbrunnen"
+  },
+  {
+    "episode": "201",
+    "date": "1998-09-27",
+    "title": "Die verschwundenen Trucks"
+  },
+  {
+    "episode": "202",
+    "date": "1998-10-25",
+    "title": "Das Freudenhaus"
+  },
+  {
+    "episode": "203",
+    "date": "1998-11-01",
+    "title": "Der Baum"
+  },
+  {
+    "episode": "204",
+    "date": "1998-11-22",
+    "title": "Marsmenschen"
+  },
+  {
+    "episode": "205",
+    "date": "1998-11-29",
+    "title": "Weidmannsheil"
+  },
+  {
+    "episode": "206",
+    "date": "1998-12-27",
+    "title": "Nachbarschaftshilfe"
+  },
+  {
+    "episode": "207",
+    "date": "1999-01-03",
+    "title": "Das Skelett"
+  },
+  {
+    "episode": "208",
+    "date": "1999-01-31",
+    "title": "Tiefdruckgebiete"
+  },
+  {
+    "episode": "209",
+    "date": "1998-02-07",
+    "title": "Der Autodieb"
+  },
+  {
+    "episode": "210",
+    "date": "1999-03-07",
+    "title": "Der Vorleser"
+  },
+  {
+    "episode": "211",
+    "date": "1999-03-14",
+    "title": "Die lieben Nachbarn"
+  },
+  {
+    "episode": "212",
+    "date": "1999-04-04",
+    "title": "Tödliches Spiel"
+  },
+  {
+    "episode": "213",
+    "date": "1999-04-11",
+    "title": "Billy the Kid"
+  },
+  {
+    "episode": "214",
+    "date": "1999-05-02",
+    "title": "Der Raubüberfall"
+  },
+  {
+    "episode": "215",
+    "date": "1999-05-09",
+    "title": "Haarige Zeiten"
+  },
+  {
+    "episode": "216",
+    "date": "1999-05-23",
+    "title": "Der Teddybär"
+  },
+  {
+    "episode": "217",
+    "date": "1999-06-06",
+    "title": "Der Schlüssel"
+  },
+  {
+    "episode": "218",
+    "date": "1999-06-27",
+    "title": "Der Klabautermann"
+  },
+  {
+    "episode": "219",
+    "date": "1999-07-04",
+    "title": "Der Bestseller"
+  },
+  {
+    "episode": "220",
+    "date": "1999-08-01",
+    "title": "Das Feuerwerk"
+  },
+  {
+    "episode": "221",
+    "date": "1999-08-22",
+    "title": "Schmuckstücke"
+  },
+  {
+    "episode": "222",
+    "date": "1999-09-19",
+    "title": "Der Sprayer"
+  },
+  {
+    "episode": "223",
+    "date": "1999-10-17",
+    "title": "Das Kaffeekränzchen"
+  },
+  {
+    "episode": "224",
+    "date": "1999-10-31",
+    "title": "Das Erlebnishotel"
+  },
+  {
+    "episode": "225",
+    "date": "1999-11-07",
+    "title": "Die Schlafwandlerin"
+  },
+  {
+    "episode": "226",
+    "date": "1999-11-28",
+    "title": "Von Quoten und Toten"
+  },
+  {
+    "episode": "227",
+    "date": "1999-12-05",
+    "title": "Die Tonjäger"
+  },
+  {
+    "episode": "228",
+    "date": "1999-12-26",
+    "title": "Oh Tannenbaum"
+  },
+  {
+    "episode": "229",
+    "date": "2000-01-02",
+    "title": "Die Millenniumsleiche"
+  },
+  {
+    "episode": "230",
+    "date": "2000-02-06",
+    "title": "Der Hellseher"
+  },
+  {
+    "episode": "231",
+    "date": "2000-03-05",
+    "title": "Prüfungsangst"
+  },
+  {
+    "episode": "232",
+    "date": "2000-04-09",
+    "title": "Der Matador"
+  },
+  {
+    "episode": "233",
+    "date": "2000-05-07",
+    "title": "Die Sprengmeister"
+  },
+  {
+    "episode": "234",
+    "date": "2000-06-11",
+    "title": "Der Vertrag"
+  },
+  {
+    "episode": "235",
+    "date": "2000-07-09",
+    "title": "Flugangst"
+  },
+  {
+    "episode": "236",
+    "date": "2000-08-13",
+    "title": "Atemlos"
+  },
+  {
+    "episode": "237",
+    "date": "2000-09-10",
+    "title": "Der Schatz im Silberwald"
+  },
+  {
+    "episode": "238",
+    "date": "2000-10-08",
+    "title": "Die Rentnergang"
+  },
+  {
+    "episode": "239",
+    "date": "2000-11-12",
+    "title": "Der Traummann"
+  },
+  {
+    "episode": "240",
+    "date": "2000-12-10",
+    "title": "Der Ersatzmann"
+  },
+  {
+    "episode": "241",
+    "date": "2001-01-14",
+    "title": "Der Schneemann"
+  },
+  {
+    "episode": "242",
+    "date": "2001-02-18",
+    "title": "Der Auftrag"
+  },
+  {
+    "episode": "243",
+    "date": "2001-03-18",
+    "title": "Mord auf CD"
+  },
+  {
+    "episode": "244",
+    "date": "2001-04-15",
+    "title": "Der Mann mit der Maske"
+  },
+  {
+    "episode": "245",
+    "date": "2001-05-13",
+    "title": "Die Expedition"
+  },
+  {
+    "episode": "246",
+    "date": "2001-06-24",
+    "title": "In vino veritas"
+  },
+  {
+    "episode": "247",
+    "date": "2001-07-15",
+    "title": "Es war einmal ein Mord"
+  },
+  {
+    "episode": "248",
+    "date": "2001-08-19",
+    "title": "Der Fotograf"
+  },
+  {
+    "episode": "249",
+    "date": "2001-09-23",
+    "title": "Der rote Rucksack"
+  },
+  {
+    "episode": "250",
+    "date": "2001-11-04",
+    "title": "Die verschwundenen Käfer"
+  },
+  {
+    "episode": "251",
+    "date": "2003-01-26",
+    "title": "Der Mann ohne Alibi"
+  },
+  {
+    "episode": "252",
+    "date": "2003-02-23",
+    "title": "Tödlicher Chat"
+  },
+  {
+    "episode": "253",
+    "date": "2003-04-06",
+    "title": "Ein Schluck zuviel"
+  },
+  {
+    "episode": "254",
+    "date": "2003-05-04",
+    "title": "Ein seltsamer Bruder"
+  },
+  {
+    "episode": "255",
+    "date": "2003-06-01",
+    "title": "Brieffreundschaften"
+  },
+  {
+    "episode": "256",
+    "date": "2003-07-06",
+    "title": "Der Mann in der Hängematte"
+  },
+  {
+    "episode": "257",
+    "date": "2003-08-03",
+    "title": "Die Armbrust"
+  },
+  {
+    "episode": "258",
+    "date": "2003-09-07",
+    "title": "Der Schrumpfkopf"
+  },
+  {
+    "episode": "259",
+    "date": "2003-10-05",
+    "title": "Zahn um Zahn"
+  },
+  {
+    "episode": "260",
+    "date": "2003-11-09",
+    "title": "Der geheimnisvolle Schlüssel"
+  },
+  {
+    "episode": "261",
+    "date": "2003-12-07",
+    "title": "Der Mann auf der Brücke"
+  },
+  {
+    "episode": "262",
+    "date": "2004-01-04",
+    "title": "Die Tankstelle"
+  },
+  {
+    "episode": "263",
+    "date": "2004-02-01",
+    "title": "Die Vögel"
+  },
+  {
+    "episode": "264",
+    "date": "2004-03-05",
+    "title": "Der Besucher"
+  },
+  {
+    "episode": "265",
+    "date": "2004-04-04",
+    "title": "Stilleben mit Leiche"
+  },
+  {
+    "episode": "266",
+    "date": "2004-05-02",
+    "title": "Die Nichtschwimmer"
+  },
+  {
+    "episode": "267",
+    "date": "2004-06-06",
+    "title": "Der Regenschirm"
+  },
+  {
+    "episode": "268",
+    "date": "2004-07-04",
+    "title": "Der Ausserirdische"
+  },
+  {
+    "episode": "269",
+    "date": "2004-08-01",
+    "title": "Geboren am 1. August"
+  },
+  {
+    "episode": "270",
+    "date": "2004-09-05",
+    "title": "Tödliche Fragen"
+  },
+  {
+    "episode": "271",
+    "date": "2004-10-03",
+    "title": "Das Haar in der Suppe"
+  },
+  {
+    "episode": "272",
+    "date": "2004-11-07",
+    "title": "Der Traumjob"
+  },
+  {
+    "episode": "273",
+    "date": "2004-12-05",
+    "title": "Schwarzgeld"
+  },
+  {
+    "episode": "274",
+    "date": "2005-01-02",
+    "title": "Verfolgungswahn"
+  },
+  {
+    "episode": "275",
+    "date": "2005-02-06",
+    "title": "Der Mann am Fenster"
+  },
+  {
+    "episode": "276",
+    "date": "2005-03-06",
+    "title": "Der Schuh des Mörders"
+  },
+  {
+    "episode": "277",
+    "date": "2005-04-03",
+    "title": "Die Todesanzeige"
+  },
+  {
+    "episode": "278",
+    "date": "2005-05-01",
+    "title": "Der Tante Emma Laden"
+  },
+  {
+    "episode": "279",
+    "date": "2005-06-05",
+    "title": "Die Politesse"
+  },
+  {
+    "episode": "280",
+    "date": "2005-07-03",
+    "title": "Wie im Schlaf"
+  },
+  {
+    "episode": "281",
+    "date": "2005-08-07",
+    "title": "Viel Lärm um Nichts"
+  },
+  {
+    "episode": "282",
+    "date": "2005-09-04",
+    "title": "Der mörderische Reigen"
+  },
+  {
+    "episode": "283",
+    "date": "2005-10-02",
+    "title": "Ein armer Schlucker"
+  },
+  {
+    "episode": "284",
+    "date": "2005-11-06",
+    "title": "Die Putzfrau"
+  },
+  {
+    "episode": "285",
+    "date": "2005-12-04",
+    "title": "Der Hausierer"
+  },
+  {
+    "episode": "286",
+    "date": "2006-01-01",
+    "title": "Der letzte Tag"
+  },
+  {
+    "episode": "287",
+    "date": "2006-03-05",
+    "title": "Der Balkonmörder"
+  },
+  {
+    "episode": "288",
+    "date": "2006-04-02",
+    "title": "Der unsichtbare Schatz"
+  },
+  {
+    "episode": "289",
+    "date": "2006-05-07",
+    "title": "Die schwarzen Witwen"
+  },
+  {
+    "episode": "290",
+    "date": "2006-06-04",
+    "title": "Die blutigen Kochlöffel"
+  },
+  {
+    "episode": "291",
+    "date": "2006-08-06",
+    "title": "Tödliche Kunst"
+  },
+  {
+    "episode": "292",
+    "date": "2006-09-03",
+    "title": "Der Stromschlag"
+  },
+  {
+    "episode": "293",
+    "date": "2006-10-01",
+    "title": "Der Spanner"
+  },
+  {
+    "episode": "294",
+    "date": "2006-11-05",
+    "title": "Der unbekannte Tote"
+  },
+  {
+    "episode": "295",
+    "date": "2006-12-03",
+    "title": "Der gute Zweck"
+  },
+  {
+    "episode": "296",
+    "date": "2007-01-07",
+    "title": "Die gestohlene Identität"
+  },
+  {
+    "episode": "297",
+    "date": "2007-02-04",
+    "title": "Die wilde Drei"
+  },
+  {
+    "episode": "298",
+    "date": "2007-03-04",
+    "title": "Die rote Lokomotive"
+  },
+  {
+    "episode": "299",
+    "date": "2007-04-01",
+    "title": "Der Aprilscherz"
+  },
+  {
+    "episode": "300",
+    "date": "2007-05-06",
+    "title": "Der Biedermann"
+  },
+  {
+    "episode": "301",
+    "date": "2007-06-03",
+    "title": "Das Erbe des Herrn Kuhn"
+  },
+  {
+    "episode": "302",
+    "date": "2007-07-01",
+    "title": "Die Frau aus Ungarn"
+  },
+  {
+    "episode": "303",
+    "date": "2007-08-05",
+    "title": "Tödliches Camping"
+  },
+  {
+    "episode": "304",
+    "date": "2007-09-02",
+    "title": "Das Geständnis"
+  },
+  {
+    "episode": "305",
+    "date": "2007-10-07",
+    "title": "Gefährliche Salben"
+  },
+  {
+    "episode": "306",
+    "date": "2007-11-04",
+    "title": "Die Qual der Wahl"
+  },
+  {
+    "episode": "307",
+    "date": "2007-12-02",
+    "title": "Der letzte Deal"
+  },
+  {
+    "episode": "308",
+    "date": "2008-01-06",
+    "title": "Geld oder Leben"
+  },
+  {
+    "episode": "309",
+    "date": "2008-02-03",
+    "title": "Das geheimnisvolle Haus"
+  },
+  {
+    "episode": "310",
+    "date": "2008-03-02",
+    "title": "Der Koffer im Schnee"
+  },
+  {
+    "episode": "311",
+    "date": "2008-04-06",
+    "title": "Die Puppenmacherin"
+  },
+  {
+    "episode": "312",
+    "date": "2008-05-04",
+    "title": "Tödliches Dinner"
+  },
+  {
+    "episode": "313",
+    "date": "2008-06-01",
+    "title": "Im tiefsten Mittelalter"
+  },
+  {
+    "episode": "314",
+    "date": "2008-07-06",
+    "title": "Das Passwort"
+  },
+  {
+    "episode": "315",
+    "date": "2008-10-05",
+    "title": "Die blaue Jacke"
+  },
+  {
+    "episode": "316",
+    "date": "2008-11-02",
+    "title": "Der besondere Tag"
+  },
+  {
+    "episode": "317",
+    "date": "2008-12-07",
+    "title": "Die eiserne Reserve"
+  },
+  {
+    "episode": "318",
+    "date": "2009-01-04",
+    "title": "Der kleine Bruder"
+  },
+  {
+    "episode": "319",
+    "date": "2009-02-01",
+    "title": "Spekulationen"
+  },
+  {
+    "episode": "320",
+    "date": "2009-03-01",
+    "title": "Tote Liebe"
+  },
+  {
+    "episode": "321",
+    "date": "2009-04-05",
+    "title": "Auf Messers Schneide"
+  },
+  {
+    "episode": "322",
+    "date": "2009-05-03",
+    "title": "Die Stimme"
+  },
+  {
+    "episode": "323",
+    "date": "2009-06-07",
+    "title": "Im Schneckentempo"
+  },
+  {
+    "episode": "324",
+    "date": "2009-08-02",
+    "title": "Der verschwundene Nachbar"
+  },
+  {
+    "episode": "325",
+    "date": "2009-09-06",
+    "title": "Zerstörtes Glück"
+  },
+  {
+    "episode": "326",
+    "date": "2009-10-04",
+    "title": "Die Vision"
+  },
+  {
+    "episode": "327",
+    "date": "2009-12-06",
+    "title": "Stille Wasser"
+  },
+  {
+    "episode": "328",
+    "date": "2010-01-03",
+    "title": "Das zweite Standbein"
+  },
+  {
+    "episode": "329",
+    "date": "2010-02-07",
+    "title": "Eiseskälte"
+  },
+  {
+    "episode": "330",
+    "date": "2010-03-07",
+    "title": "Der Fahnder"
+  },
+  {
+    "episode": "331",
+    "date": "2010-04-04",
+    "title": "Der Lauscher"
+  },
+  {
+    "episode": "332",
+    "date": "2010-05-02",
+    "title": "Schlechtes Timing"
+  },
+  {
+    "episode": "333",
+    "date": "2010-07-04",
+    "title": "Jugendsünden"
+  },
+  {
+    "episode": "334",
+    "date": "2010-09-12",
+    "title": "Phantomschmerz"
+  },
+  {
+    "episode": "335",
+    "date": "2010-10-03",
+    "title": "Das Tattoo"
+  },
+  {
+    "episode": "336",
+    "date": "2010-11-07",
+    "title": "Ein Gruss aus Südamerika"
+  },
+  {
+    "episode": "337",
+    "date": "2010-12-05",
+    "title": "Die Beobachter"
+  },
+  {
+    "episode": "338",
+    "date": "2011-01-02",
+    "title": "Die tödliche Kurve"
+  },
+  {
+    "episode": "339",
+    "date": "2011-04-10",
+    "title": "Die tödliche Geschäftsidee"
+  },
+  {
+    "episode": "340",
+    "date": "2011-05-01",
+    "title": "Es geschah am 1. Mai"
+  },
+  {
+    "episode": "341",
+    "date": "2011-06-12",
+    "title": "Die Frau im Keller"
+  },
+  {
+    "episode": "342",
+    "date": "2011-09-04",
+    "title": "Die Erpressung"
+  },
+  {
+    "episode": "343",
+    "date": "2011-10-02",
+    "title": "Der Jakobsweg"
+  },
+  {
+    "episode": "344",
+    "date": "2011-11-06",
+    "title": "Anti-Aging"
+  },
+  {
+    "episode": "345",
+    "date": "2011-12-04",
+    "title": "Burnout"
+  },
+  {
+    "episode": "346",
+    "date": "2012-02-05",
+    "title": "Der Parkschein"
+  },
+  {
+    "episode": "347",
+    "date": "2012-03-04",
+    "title": "Das alte Haus"
+  },
+  {
+    "episode": "348",
+    "date": "2012-04-08",
+    "title": "Das Schneeballsystem"
+  },
+  {
+    "episode": "349",
+    "date": "2012-05-13",
+    "title": "Die verschwundene Frau"
+  },
+  {
+    "episode": "350",
+    "date": "2012-07-01",
+    "title": "Der letzte Gang"
+  },
+  {
+    "episode": "351",
+    "date": "2012-09-02",
+    "title": "Die Frau in Rot"
+  },
+  {
+    "episode": "352",
+    "date": "2012-10-07",
+    "title": "Die falsche Tochter"
+  },
+  {
+    "episode": "353",
+    "date": "2012-11-04",
+    "title": "Mitten in der Nacht"
+  },
+  {
+    "episode": "354",
+    "date": "2012-12-16",
+    "title": "Die verschwundene Tasche"
+  },
+  {
+    "episode": "355",
+    "date": "2013-03-03",
+    "title": "Die Urne"
+  },
+  {
+    "episode": "356",
+    "date": "2013-04-07",
+    "title": "Undercover"
+  },
+  {
+    "episode": "357",
+    "date": "2013-05-05",
+    "title": "Das rote Haus"
+  },
+  {
+    "episode": "358",
+    "date": "2013-06-16",
+    "title": "Der grüne Daumen"
+  },
+  {
+    "episode": "359",
+    "date": "2013-09-01",
+    "title": "Die Paten"
+  },
+  {
+    "episode": "360",
+    "date": "2013-10-06",
+    "title": "Ausser Kontrolle"
+  },
+  {
+    "episode": "361",
+    "date": "2013-11-03",
+    "title": "Schachmatt"
+  },
+  {
+    "episode": "362",
+    "date": "2013-12-15",
+    "title": "Sturmwarnung"
+  },
+  {
+    "episode": "363",
+    "date": "2014-03-16",
+    "title": "Das Spukhaus"
+  },
+  {
+    "episode": "364",
+    "date": "2014-04-13",
+    "title": "Der Plan"
+  },
+  {
+    "episode": "365",
+    "date": "2014-05-04",
+    "title": "Die Heilerin"
+  },
+  {
+    "episode": "366",
+    "date": "2014-06-15",
+    "title": "Die Stimme des Täters"
+  },
+  {
+    "episode": "367",
+    "date": "2014-09-07",
+    "title": "Eine schillernde Frau"
+  },
+  {
+    "episode": "368",
+    "date": "2014-10-12",
+    "title": "Schlank und tot"
+  },
+  {
+    "episode": "369",
+    "date": "2015-01-18",
+    "title": "Der Mittwochsclub"
+  },
+  {
+    "episode": "370",
+    "date": "2015-03-08",
+    "title": "Der richtige Zeitpunkt"
+  },
+  {
+    "episode": "371",
+    "date": "2015-04-19",
+    "title": "Tödliche Koordinaten"
+  },
+  {
+    "episode": "372",
+    "date": "2015-05-24",
+    "title": "Mietnomaden"
+  },
+  {
+    "episode": "373",
+    "date": "2015-08-30",
+    "title": "Tödliches Start-Up"
+  },
+  {
+    "episode": "374",
+    "date": "2015-10-04",
+    "title": "Die gelbe Gefahr"
+  },
+  {
+    "episode": "375",
+    "date": "2015-12-20",
+    "title": "Der Lieferwagen"
+  },
+  {
+    "episode": "376",
+    "date": "2016-01-31",
+    "title": "Die Überwachten"
+  },
+  {
+    "episode": "377",
+    "date": "2016-03-20",
+    "title": "Beste Freunde"
+  },
+  {
+    "episode": "378",
+    "date": "2016-04-17",
+    "title": "Der Schlüssel zum Erfolg"
+  },
+  {
+    "episode": "379",
+    "date": "2016-05-22",
+    "title": "Die Drohne"
+  },
+  {
+    "episode": "380",
+    "date": "2016-06-26",
+    "title": "Die perfekte Mischung"
+  },
+  {
+    "episode": "381",
+    "date": "2016-09-18",
+    "title": "Gesundheit"
+  },
+  {
+    "episode": "382",
+    "date": "2016-10-16",
+    "title": "Der Hilferuf"
+  },
+  {
+    "episode": "383",
+    "date": "2017-01-22",
+    "title": "Ein Funken Verstand"
+  },
+  {
+    "episode": "384",
+    "date": "2017-02-19",
+    "title": "Eine seltsame Erpressung"
+  },
+  {
+    "episode": "385",
+    "date": "2017-04-23",
+    "title": "Paranoia"
+  },
+  {
+    "episode": "386",
+    "date": "2017-05-28",
+    "title": "Superfood"
+  },
+  {
+    "episode": "387",
+    "date": "2017-07-23",
+    "title": "Der Mann auf dem Dach"
+  },
+  {
+    "episode": "388",
+    "date": "2017-09-24",
+    "title": "Alles unter Kontrolle"
+  },
+  {
+    "episode": "389",
+    "date": "2017-10-22",
+    "title": "Eine fotogene Leiche"
+  },
+  {
+    "episode": "390",
+    "date": "2017-11-26",
+    "title": "Die Kochbuchkiller"
+  },
+  {
+    "episode": "391",
+    "date": "2017-12-24",
+    "title": "Frohe Weihnachten"
+  },
+  {
+    "episode": "392",
+    "date": "2018-01-28",
+    "title": "Der Mann im Zug"
+  },
+  {
+    "episode": "393",
+    "date": "2018-03-04",
+    "title": "Im Einkaufswahn"
+  },
+  {
+    "episode": "394",
+    "date": "2018-04-15",
+    "title": "Der Puppensammler"
+  },
+  {
+    "episode": "395",
+    "date": "2018-05-20",
+    "title": "Eine seltsame Entführung"
+  },
+  {
+    "episode": "396",
+    "date": "2018-07-05",
+    "title": "Der Sinn des Lebens"
+  },
+  {
+    "episode": "397",
+    "date": "2018-09-09",
+    "title": "Falsche Polizisten"
+  },
+  {
+    "episode": "398",
+    "date": "2018-10-28",
+    "title": "Der intelligente Lautsprecher"
+  },
+  {
+    "episode": "399",
+    "date": "2018-12-09",
+    "title": "Die Bombendrohung"
+  },
+  {
+    "episode": "400",
+    "date": "2019-01-13",
+    "title": "Das Jubiläumsgeschenk"
+  },
+  {
+    "episode": "401",
+    "date": "2019-05-19",
+    "title": "Die Verfolger"
+  },
+  {
+    "episode": "402",
+    "date": "2019-06-23",
+    "title": "Die Hochstaplerin"
+  },
+  {
+    "episode": "403",
+    "date": "2019-09-22",
+    "title": "Die neue Tankstelle"
+  },
+  {
+    "episode": "404",
+    "date": "2019-10-20",
+    "title": "Ein neues Leben"
+  }
+]
