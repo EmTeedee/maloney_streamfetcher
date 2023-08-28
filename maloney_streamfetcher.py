@@ -106,7 +106,7 @@ class MaloneyDownload:
           with open(filename,'wb') as output:
             output.write(mp3file.read())
         except Exception as err:
-          print("Could not download episode: {}".format(str(err)))
+          print("Could not download episode {}: {}".format(mp3_name, str(err)))
           continue
 
         idx.append(cnt)
@@ -199,6 +199,8 @@ class MaloneyDownload:
         episode_info["uid"] = uid
         date = episode_info["date"]
         number = episode_info["episode"]
+    elif self.episode_data:
+        print("Could not find episode information for: {}".format(title))
     
     self.log("   Episode Info")
     self.log("      * Title    : {} Date:{}".format(title, publishedDate, year))
