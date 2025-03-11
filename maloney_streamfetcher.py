@@ -35,27 +35,24 @@ class MaloneyDownload:
             self.episode_data = json.loads(json_string)
 
   def fetch_latest(self, outdir = None, uid = None):
-    #old URL: srf_maloney_url = "https://www.srf.ch/sendungen/maloney/"
-    srf_maloney_url = "https://www.srf.ch/audio/maloney"
-    self.process_maloney_episodes(srf_maloney_url, outdir=outdir, uid=uid)
+    self.process_maloney_episodes(1, outdir=outdir, uid=uid)
 
   def fetch_all(self, outdir = None, uid = None):
-    #srf_maloney_url    = "https://www.srf.ch/sendungen/maloney/layout/set/ajax/Sendungen/maloney/sendungen/(offset)/"
-    srf_maloney_url = "https://www.srf.ch/audio/episodes/10000183/10/"
-
-    for i in range(0,510,10): # each page shows 10 items per page, iterate through pages
-      url = srf_maloney_url + str(i)
-      if (self.process_maloney_episodes(url, i, outdir=outdir, uid=uid) > 0) and uid: # if uid is set and download worked -> exit
+    for i in range(1,20): # each page shows 10 items per page, iterate through pages
+      if (self.process_maloney_episodes(i, outdir=outdir, uid=uid) > 0) and uid: # if uid is set and download worked -> exit
         return
 
-  def process_maloney_episodes(self, url, offset = 0, outdir=None, uid=None):
+  def process_maloney_episodes(self, page_number=1, outdir=None, uid=None):
     # Constants
     path_to_mid3v2   = self.path
     mid3v2   = path_to_mid3v2 + "/mid3v2.py"
 
     temp_directory   = "./temp"
-    #old URL: json_url         = "https://il.srgssr.ch/integrationlayer/2.0/srf/mediaComposition/audio/"
-    json_url         = "https://il.srgssr.ch/integrationlayer/2.0/mediaComposition/byUrn/urn:srf:audio:"
+    #json_url = "https://il.srgssr.ch/integrationlayer/2.0/srf/mediaComposition/audio/"
+    #json_url = "https://il.srgssr.ch/integrationlayer/2.0/mediaComposition/byUrn/urn:srf:audio:"
+    json_url = "https://il.srf.ch/integrationlayer/2.0/mediaComposition/byUrn/"
+
+    episode_list_url = "https://www.srf.ch/aron/api/audio/shows/A00361/latestEpisodes?page=" + str(page_number)
 
     # Get user constants
     if outdir is None:
@@ -68,16 +65,12 @@ class MaloneyDownload:
 
     # Get page content and id's
     if uid is None:
-      id = [0,1,2,3,4,5,6,7,8,9]
-      self.log("No ID given, will download all available episodes from the mainpage")
-      # Get page info
-      page = self.curl_page(url)
-      uids = self.parse_html(page)
+      urns = self.get_list_urns(episode_list_url)
     else:
-      uids = [uid]
+      urns = [ 'urn:srf:audio:' + uid]
 
     # Read JSON Data
-    json_data = self.get_jsondata(json_url, uids)
+    json_data = self.get_jsondata(json_url, urns)
 
     # Download Files
     self.log("Get Episodes")
@@ -133,7 +126,10 @@ class MaloneyDownload:
     shutil.rmtree(temp_directory)
 
     print("------------------------------------------------------")
-    print(" Finished downloading {} Episodes from page with offset {}".format(len(idx), offset))
+    if page_number:
+        print(" Finished downloading {} Episodes from page {} ({} episodes on page)".format(len(idx), page_number, len(urns)))
+    else:
+        print(" Finished downloading {} Episodes".format(len(idx)))
     for id in idx:
       print("  * {} ({})".format(json_data[id]["title"], json_data[id]["date"]))
     print("------------------------------------------------------")
@@ -150,45 +146,28 @@ class MaloneyDownload:
     c.close()
     return buffer.getvalue().decode("utf-8")
 
-  def parse_html(self, page):
-    lines = unicodedata.normalize('NFKD', page).encode('utf-8','ignore')
-    lines = str(lines).split(" ")
-
-    uids = []
-
-    for line in lines:
-      if '/popupaudioplayer' in line:
-        pos = line.find("?id=") + 4
-        uids.append(line[pos:pos+36])
-
-    if len(uids) > 0:
-      self.log("Found ID's")
-      for i in range(len(uids)):
-        self.log("  * ID {} = {} ".format(i, uids[i]))
-    return uids
-
-  def get_jsondata(self, jsonurl, uids):
+  def get_jsondata(self, jsonurl, urns):
     json_data = []
-    for uid in uids:
-      url = jsonurl + uid + ".json"
+    for urn in urns:
+      url = jsonurl + urn + ".json"
       page = self.curl_page(url)
-      (title, lead, httpsurl, year, date, number) = self.parse_json(page, uid)
+      (title, lead, httpsurl, year, date, number) = self.parse_json(page, urn)
       json_data.append({"title": title, "lead": lead, "httpsurl":httpsurl, "year":year, "date":date, "number":number})
     return json_data
-      
+
   def parse_json(self, json_string, uid):
     json_string = unicodedata.normalize('NFKD', json_string).encode('utf-8','ignore') # we're not interested in any non-unicode data
     jsonobj = json.loads(json_string)
-    
+
     title = jsonobj['chapterList'][0]['title']
-    lead = jsonobj['chapterList'][0]['lead']
+    lead = jsonobj['chapterList'][0].get('lead', '')
     publishedDate = jsonobj['episode']['publishedDate']
-    
+
     httpsurl = ''
     for x in range(0, len(jsonobj['chapterList'][0]['resourceList'])):
       if 'HTTPS' in jsonobj['chapterList'][0]['resourceList'][x]['protocol']:
         httpsurl = jsonobj['chapterList'][0]['resourceList'][x]['url']
-    
+
     year = jsonobj['chapterList'][0]['date'][:4]
     date = jsonobj['chapterList'][0]['date'][:10]
     number = ""
@@ -203,14 +182,23 @@ class MaloneyDownload:
         number = episode_info["episode"]
     elif self.episode_data:
         print("Could not find episode information for: {}".format(title))
-    
+
     self.log("   Episode Info")
     self.log("      * Title    : {} Date:{}".format(title, publishedDate, year))
     self.log("      * HTTPS Url: {}".format(httpsurl))
     self.log("      * Lead     : {}".format(lead))
-    
+
     return (title, lead, httpsurl, year, date, number)
-      
+
+  def get_list_urns(self, url):
+    json_string = self.curl_page(url)
+    json_string = unicodedata.normalize('NFKD', json_string).encode('utf-8','ignore')
+    jsonobj = json.loads(json_string)
+    urns = []
+    for episode in jsonobj:
+        urns.append(episode.get('assetUrn'))
+    return urns
+
   def system_command(self, command):
     self.log(command)
     os.system(command)
@@ -238,7 +226,9 @@ if __name__ == "__main__":
 
   maloney_downloader = MaloneyDownload(verbose=args.verbose, episode_json_file = args.json)
 
-  if latest:
+  if args.uid:
+    maloney_downloader.process_maloney_episodes(None, args.outdir, uid=args.uid)
+  elif latest:
     maloney_downloader.fetch_latest(outdir = args.outdir, uid=args.uid)
   else: # default setting
     maloney_downloader.fetch_all(outdir = args.outdir, uid=args.uid)
